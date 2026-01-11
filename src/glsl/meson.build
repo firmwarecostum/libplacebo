@@ -30,7 +30,9 @@ if glslang_req.auto() and shaderc.found()
 elif not glslang_req.disabled()
 
   glslang_deps = [
-    cxx.find_library('glslang-default-resource-limits', required: false)
+     cxx.find_library('glslang', required: false),
+     cxx.find_library('SPIRV', required: false),
+     cxx.find_library('glslang-default-resource-limits', required: false)
   ]
 
   # meson doesn't respect generator expressions in INTERFACE_LINK_LIBRARIES
